@@ -4,7 +4,6 @@ import android.content.Context
 import android.graphics.Bitmap
 import android.net.Uri
 import android.provider.Settings
-import android.util.Log
 import android.webkit.ValueCallback
 import android.webkit.WebChromeClient
 import android.webkit.WebView
@@ -234,7 +233,7 @@ fun chrome(call: (ValueCallback<Array<Uri>>) -> Unit): WebChromeClient =
             filePathCallback: ValueCallback<Array<Uri>>,
             fileChooserParams: FileChooserParams?
         ): Boolean {
-
+            call(filePathCallback)
             return true
         }
     }
